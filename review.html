@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Leave a Review | Barry Dell Plumbing</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --navy: #1a3453; --navy-dark: #122440; --red: #c0392b; --red-dark: #a93226; --red-light: #e74c3c;
+      --white: #ffffff; --off-white: #f4f6f9; --light-grey: #e8ecf1; --mid-grey: #6b7c8d; --text: #2c3e50; --border: #d0d9e4;
+    }
+    body { font-family: 'Open Sans', sans-serif; background: var(--off-white); color: var(--text); min-height: 100vh; display: flex; flex-direction: column; }
+
+    nav { background: var(--navy-dark); padding: 0 2rem; height: 72px; display: flex; align-items: center; justify-content: space-between; box-shadow: 0 2px 12px rgba(0,0,0,0.3); }
+    .nav-logo img { height: 46px; width: auto; display: block; }
+    .back-link { font-family: 'Montserrat',sans-serif; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.6); text-decoration: none; transition: color 0.2s; }
+    .back-link:hover { color: var(--white); }
+
+    main { flex: 1; display: flex; align-items: center; justify-content: center; padding: 3rem 2rem; }
+
+    .review-box {
+      background: var(--white);
+      border: 1px solid var(--border);
+      max-width: 520px;
+      width: 100%;
+      padding: 3rem;
+      text-align: center;
+      animation: fadeUp 0.6s ease forwards;
+      box-shadow: 0 8px 32px rgba(18,36,64,0.07);
+    }
+
+    .review-logo { margin-bottom: 2rem; }
+    .review-logo img { height: 50px; width: auto; }
+
+    .review-eyebrow { display: inline-flex; align-items: center; gap: 0.6rem; margin-bottom: 1rem; }
+    .eyebrow-line { width: 24px; height: 2px; background: var(--red); }
+    .review-eyebrow span { font-family: 'Montserrat',sans-serif; font-size: 0.62rem; letter-spacing: 0.28em; text-transform: uppercase; color: var(--red); font-weight: 700; }
+
+    h1 { font-family: 'Montserrat',sans-serif; font-size: clamp(1.8rem,6vw,2.8rem); font-weight: 800; color: var(--navy-dark); margin-bottom: 0.7rem; line-height: 1.1; }
+    .review-sub { font-size: 0.9rem; color: var(--mid-grey); line-height: 1.65; margin-bottom: 2.5rem; }
+
+    .stars-label { font-family: 'Montserrat',sans-serif; font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--mid-grey); font-weight: 700; margin-bottom: 1.2rem; }
+
+    .stars-row { display: flex; justify-content: center; gap: 0.6rem; margin-bottom: 1.5rem; }
+    .star-btn { font-size: 2.8rem; background: none; border: none; cursor: pointer; line-height: 1; padding: 0.2rem; transition: transform 0.2s, filter 0.2s; filter: grayscale(1) opacity(0.25); }
+    .star-btn:hover, .star-btn.hovered { filter: none; transform: scale(1.18); }
+    .star-btn.selected { filter: none; }
+
+    .rating-label { font-family: 'Montserrat',sans-serif; font-size: 0.88rem; font-weight: 600; color: var(--navy); min-height: 1.4rem; margin-bottom: 2rem; transition: opacity 0.2s; }
+
+    .proceed-btn { width: 100%; background: var(--red); color: var(--white); border: none; padding: 1.05rem; font-family: 'Montserrat',sans-serif; font-weight: 800; font-size: 0.8rem; letter-spacing: 0.12em; text-transform: uppercase; cursor: pointer; transition: background 0.2s, transform 0.2s, opacity 0.2s; opacity: 0.35; pointer-events: none; }
+    .proceed-btn.active { opacity: 1; pointer-events: all; }
+    .proceed-btn.active:hover { background: var(--red-dark); transform: translateY(-1px); }
+
+    .review-note { margin-top: 1.5rem; font-size: 0.72rem; color: var(--mid-grey); line-height: 1.6; }
+
+    footer { background: var(--navy-dark); border-top: 3px solid var(--red); padding: 1.2rem 2rem; text-align: center; }
+    footer p { font-size: 0.72rem; color: rgba(255,255,255,0.35); }
+    footer a { color: rgba(255,255,255,0.35); text-decoration: none; }
+
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-logo">
+      <img src="https://barrydellplumbing.co.nz/themes/startertoplight/img/logo-color.png" alt="Barry Dell Plumbing" />
+    </a>
+    <a href="index.html" class="back-link">← Back to Site</a>
+  </nav>
+
+  <main>
+    <div class="review-box">
+      <div class="review-logo">
+        <img src="https://barrydellplumbing.co.nz/themes/startertoplight/img/logo-color.png" alt="Barry Dell Plumbing" />
+      </div>
+      <div class="review-eyebrow">
+        <div class="eyebrow-line"></div>
+        <span>Share Your Experience</span>
+        <div class="eyebrow-line"></div>
+      </div>
+      <h1>How Did We Do?</h1>
+      <p class="review-sub">Your feedback helps us improve — and helps other Dunedin locals find a plumber they can trust. Select your rating below.</p>
+
+      <div class="stars-label">Select your rating</div>
+      <div class="stars-row" id="starsRow">
+        <button class="star-btn" data-rating="1" aria-label="1 star">⭐</button>
+        <button class="star-btn" data-rating="2" aria-label="2 stars">⭐</button>
+        <button class="star-btn" data-rating="3" aria-label="3 stars">⭐</button>
+        <button class="star-btn" data-rating="4" aria-label="4 stars">⭐</button>
+        <button class="star-btn" data-rating="5" aria-label="5 stars">⭐</button>
+      </div>
+      <div class="rating-label" id="ratingLabel">&nbsp;</div>
+      <button class="proceed-btn" id="proceedBtn">Continue</button>
+      <p class="review-note">⭐⭐⭐⭐⭐ Happy customers are directed to Google to share publicly.<br/>Lower ratings go directly to our team so we can follow up personally.</p>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Barry Dell Plumbing (2001) Ltd &nbsp;·&nbsp; <a href="tel:034554100">03 455 4100</a></p>
+  </footer>
+
+  <script>
+    // Replace with actual Google Business Profile review link
+    const GOOGLE_REVIEW_URL = 'YOUR_GOOGLE_REVIEW_LINK';
+
+    const labels = {
+      1: "We're sorry to hear that — we'd like to make it right.",
+      2: "We appreciate your honesty — let us know what happened.",
+      3: "Thanks for the feedback — we want to do better.",
+      4: "Great to hear! Would you mind sharing on Google?",
+      5: "Wonderful! We'd love it if you left us a Google review."
+    };
+
+    let selectedRating = 0;
+    const stars = document.querySelectorAll('.star-btn');
+    const ratingLabel = document.getElementById('ratingLabel');
+    const proceedBtn = document.getElementById('proceedBtn');
+
+    stars.forEach(star => {
+      star.addEventListener('mouseenter', () => {
+        const r = parseInt(star.dataset.rating);
+        stars.forEach(s => s.classList.toggle('hovered', parseInt(s.dataset.rating) <= r));
+      });
+      star.addEventListener('mouseleave', () => stars.forEach(s => s.classList.remove('hovered')));
+      star.addEventListener('click', () => {
+        selectedRating = parseInt(star.dataset.rating);
+        stars.forEach(s => s.classList.toggle('selected', parseInt(s.dataset.rating) <= selectedRating));
+        ratingLabel.textContent = labels[selectedRating];
+        proceedBtn.classList.add('active');
+        proceedBtn.textContent = selectedRating >= 4 ? 'Leave a Google Review →' : 'Share Private Feedback →';
+      });
+    });
+
+    proceedBtn.addEventListener('click', () => {
+      if (!selectedRating) return;
+      if (selectedRating >= 4) window.open(GOOGLE_REVIEW_URL, '_blank');
+      else window.location.href = `private.html?rating=${selectedRating}`;
+    });
+  </script>
+</body>
+</html>
