@@ -1,1 +1,1694 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Barry Dell Plumbing | Dunedin's Plumbing, Drainage, Roofing &amp; Heating Experts</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+    :root {
+      --red: #c0392b;
+      --red-dark: #a93226;
+      --red-light: #e74c3c;
+      --navy: #1a2332;
+      --navy-mid: #222d3d;
+      --navy-light: #2c3a4f;
+      --white: #ffffff;
+      --off-white: #f7f7f7;
+      --light-grey: #ececec;
+      --mid-grey: #666666;
+      --dark-grey: #333333;
+      --border: #e0e0e0;
+      --red-tint: rgba(192,57,43,0.08);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Open Sans', sans-serif;
+      color: var(--dark-grey);
+      background: var(--white);
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: var(--navy);
+      box-shadow: 0 2px 12px rgba(0,0,0,0.25);
+    }
+
+    .nav-top {
+      background: var(--red);
+      padding: 0.35rem 2rem;
+      display: flex;
+      justify-content: flex-end;
+      gap: 2rem;
+    }
+
+    .nav-top a {
+      color: rgba(255,255,255,0.9);
+      font-size: 0.72rem;
+      text-decoration: none;
+      font-family: 'Open Sans', sans-serif;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      transition: color 0.2s;
+    }
+
+    .nav-top a:hover { color: #fff; }
+
+    .nav-main {
+      padding: 0 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 68px;
+    }
+
+    .nav-brand {
+      display: flex;
+      flex-direction: column;
+      text-decoration: none;
+    }
+
+    .nav-brand-name {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 900;
+      font-size: 1.25rem;
+      color: var(--white);
+      letter-spacing: 0.02em;
+      line-height: 1;
+      text-transform: uppercase;
+    }
+
+    .nav-brand-name span { color: var(--red-light); }
+
+    .nav-brand-sub {
+      font-size: 0.6rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.5);
+      margin-top: 2px;
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 0;
+    }
+
+    .nav-links a {
+      display: block;
+      padding: 0 1.2rem;
+      color: rgba(255,255,255,0.85);
+      text-decoration: none;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      line-height: 68px;
+      transition: color 0.2s, background 0.2s;
+      border-bottom: 3px solid transparent;
+    }
+
+    .nav-links a:hover {
+      color: var(--white);
+      background: rgba(255,255,255,0.05);
+      border-bottom-color: var(--red);
+    }
+
+    .nav-cta-btn {
+      background: var(--red);
+      color: var(--white) !important;
+      padding: 0.7rem 1.5rem !important;
+      line-height: 1 !important;
+      height: auto !important;
+      border-bottom: none !important;
+      font-weight: 700 !important;
+      transition: background 0.2s !important;
+    }
+
+    .nav-cta-btn:hover { background: var(--red-dark) !important; }
+
+    .hamburger {
+      display: none;
+      cursor: pointer;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .hamburger span {
+      display: block;
+      width: 26px;
+      height: 2px;
+      background: #fff;
+      border-radius: 2px;
+    }
+
+    /* ── MOBILE MENU ── */
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: var(--navy);
+      z-index: 200;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+    }
+
+    .mobile-menu.open { display: flex; }
+
+    .mobile-close {
+      position: absolute;
+      top: 1.5rem; right: 2rem;
+      background: none; border: none;
+      color: #fff; font-size: 1.8rem;
+      cursor: pointer;
+    }
+
+    .mobile-menu a {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 1.5rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: rgba(255,255,255,0.85);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .mobile-menu a:hover { color: var(--red-light); }
+    .mobile-menu a.mobile-cta { color: var(--red-light); }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      background: var(--navy);
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      padding-top: 105px;
+    }
+
+    .hero-bg-img {
+      position: absolute;
+      inset: 0;
+      background-image: url('https://barrydellplumbing.co.nz/assets/Uploads/roofing1.jpg');
+      background-size: cover;
+      background-position: center;
+      opacity: 0.18;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        105deg,
+        rgba(26,35,50,0.97) 0%,
+        rgba(26,35,50,0.82) 55%,
+        rgba(26,35,50,0.55) 100%
+      );
+    }
+
+    .hero-content {
+      position: relative;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 5rem 2rem;
+      width: 100%;
+    }
+
+    .hero-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1.5rem;
+      animation: fadeUp 0.7s 0.1s both;
+    }
+
+    .hero-label-pill {
+      background: var(--red);
+      color: #fff;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      padding: 0.35rem 0.9rem;
+    }
+
+    .hero-label-text {
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.5);
+      font-weight: 600;
+    }
+
+    .hero h1 {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 900;
+      font-size: clamp(2.8rem, 7vw, 5.5rem);
+      text-transform: uppercase;
+      color: var(--white);
+      line-height: 1.05;
+      letter-spacing: -0.01em;
+      animation: fadeUp 0.7s 0.2s both;
+    }
+
+    .hero h1 span { color: var(--red-light); }
+
+    .hero-divider {
+      width: 60px;
+      height: 4px;
+      background: var(--red);
+      margin: 1.8rem 0;
+      animation: fadeUp 0.7s 0.3s both;
+    }
+
+    .hero-desc {
+      font-size: 1.05rem;
+      color: rgba(255,255,255,0.75);
+      max-width: 580px;
+      line-height: 1.8;
+      animation: fadeUp 0.7s 0.4s both;
+    }
+
+    .hero-actions {
+      margin-top: 2.5rem;
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      animation: fadeUp 0.7s 0.5s both;
+    }
+
+    .btn-red {
+      background: var(--red);
+      color: var(--white);
+      padding: 1rem 2.2rem;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 0.78rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border: 2px solid var(--red);
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s, transform 0.2s;
+      display: inline-block;
+    }
+
+    .btn-red:hover {
+      background: var(--red-dark);
+      border-color: var(--red-dark);
+      transform: translateY(-2px);
+    }
+
+    .btn-ghost {
+      background: transparent;
+      color: var(--white);
+      padding: 1rem 2.2rem;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 0.78rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border: 2px solid rgba(255,255,255,0.4);
+      cursor: pointer;
+      transition: border-color 0.2s, color 0.2s;
+      display: inline-block;
+    }
+
+    .btn-ghost:hover {
+      border-color: var(--white);
+      color: var(--white);
+    }
+
+    .hero-stats {
+      position: absolute;
+      bottom: 3rem;
+      right: 2rem;
+      display: flex;
+      gap: 0;
+      animation: fadeLeft 0.7s 0.8s both;
+    }
+
+    .hero-stat {
+      padding: 1.5rem 2rem;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      text-align: center;
+    }
+
+    .hero-stat:first-child { border-right: none; }
+
+    .hero-stat-num {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 900;
+      font-size: 2.2rem;
+      color: var(--red-light);
+      line-height: 1;
+      display: block;
+    }
+
+    .hero-stat-label {
+      font-size: 0.6rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.5);
+      display: block;
+      margin-top: 0.4rem;
+    }
+
+    /* ── TRUST STRIP ── */
+    .trust-strip {
+      background: var(--red);
+      padding: 0;
+    }
+
+    .trust-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      padding: 1.2rem 1.5rem;
+      color: rgba(255,255,255,0.95);
+      border-right: 1px solid rgba(255,255,255,0.15);
+    }
+
+    .trust-item:last-child { border-right: none; }
+
+    .trust-item-icon {
+      font-size: 1.4rem;
+      flex-shrink: 0;
+    }
+
+    .trust-item-text strong {
+      display: block;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .trust-item-text span {
+      font-size: 0.68rem;
+      opacity: 0.8;
+    }
+
+    /* ── SECTIONS ── */
+    section { padding: 5.5rem 2rem; }
+
+    .section-inner { max-width: 1200px; margin: 0 auto; }
+
+    .section-header { margin-bottom: 3.5rem; }
+
+    .section-eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .eyebrow-bar {
+      width: 36px;
+      height: 3px;
+      background: var(--red);
+      flex-shrink: 0;
+    }
+
+    .eyebrow-text {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--red);
+    }
+
+    h2 {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 800;
+      font-size: clamp(1.9rem, 4.5vw, 2.9rem);
+      text-transform: uppercase;
+      color: var(--navy);
+      line-height: 1.1;
+      letter-spacing: -0.01em;
+    }
+
+    h2 span { color: var(--red); }
+
+    /* ── SERVICES ── */
+    #services { background: var(--off-white); }
+
+    .services-top {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: end;
+      margin-bottom: 3.5rem;
+    }
+
+    .services-intro {
+      color: var(--mid-grey);
+      line-height: 1.8;
+      font-size: 0.92rem;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    .service-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      padding: 2rem 1.75rem;
+      position: relative;
+      transition: box-shadow 0.3s, transform 0.3s, border-color 0.3s;
+      overflow: hidden;
+    }
+
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: var(--red);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s;
+    }
+
+    .service-card:hover {
+      box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+      transform: translateY(-4px);
+      border-color: transparent;
+    }
+
+    .service-card:hover::before { transform: scaleX(1); }
+
+    .service-img {
+      width: 100%;
+      height: 140px;
+      object-fit: cover;
+      margin-bottom: 1.25rem;
+      display: block;
+    }
+
+    .service-icon {
+      width: 48px;
+      height: 48px;
+      background: var(--red-tint);
+      border: 2px solid rgba(192,57,43,0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      margin-bottom: 1rem;
+    }
+
+    .service-name {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.88rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--navy);
+      margin-bottom: 0.6rem;
+    }
+
+    .service-desc {
+      font-size: 0.82rem;
+      color: var(--mid-grey);
+      line-height: 1.7;
+    }
+
+    /* ── ABOUT ── */
+    #about { background: var(--white); }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+    }
+
+    .about-images {
+      position: relative;
+    }
+
+    .about-img-main {
+      width: 100%;
+      aspect-ratio: 4/3;
+      object-fit: cover;
+      display: block;
+    }
+
+    .about-img-placeholder-main {
+      width: 100%;
+      aspect-ratio: 4/3;
+      background: var(--light-grey);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 0.5rem;
+      color: #aaa;
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .about-badge {
+      position: absolute;
+      bottom: -1.5rem;
+      right: -1.5rem;
+      background: var(--red);
+      color: #fff;
+      width: 90px;
+      height: 90px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .about-badge strong {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 900;
+      font-size: 1.8rem;
+      line-height: 1;
+    }
+
+    .about-badge span {
+      font-size: 0.6rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      opacity: 0.9;
+      margin-top: 2px;
+    }
+
+    .about-content .section-header { margin-bottom: 2rem; }
+
+    .about-body {
+      font-size: 0.92rem;
+      color: var(--mid-grey);
+      line-height: 1.85;
+      margin-bottom: 1rem;
+    }
+
+    .about-pillars {
+      margin-top: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .pillar {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+      padding: 1rem 1.2rem;
+      background: var(--off-white);
+      border-left: 3px solid var(--red);
+    }
+
+    .pillar-text strong {
+      display: block;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--navy);
+      margin-bottom: 0.25rem;
+    }
+
+    .pillar-text p {
+      font-size: 0.8rem;
+      color: var(--mid-grey);
+      line-height: 1.6;
+    }
+
+    /* ── ACCREDITATIONS ── */
+    .accred-strip {
+      background: var(--navy);
+      padding: 2.5rem 2rem;
+    }
+
+    .accred-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 3rem;
+      flex-wrap: wrap;
+    }
+
+    .accred-label {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.5);
+    }
+
+    .accred-logos {
+      display: flex;
+      align-items: center;
+      gap: 2.5rem;
+      flex-wrap: wrap;
+    }
+
+    .accred-logo {
+      background: rgba(255,255,255,0.1);
+      padding: 0.6rem 1.2rem;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.7);
+      border: 1px solid rgba(255,255,255,0.12);
+    }
+
+    /* ── REVIEWS ── */
+    #reviews { background: var(--off-white); }
+
+    .reviews-header-row {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      margin-bottom: 3rem;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .google-rating {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      background: var(--white);
+      border: 1px solid var(--border);
+      padding: 1rem 1.5rem;
+    }
+
+    .g-icon {
+      font-size: 2rem;
+      font-weight: 900;
+      font-family: 'Montserrat', sans-serif;
+      color: #4285F4;
+      letter-spacing: -0.05em;
+    }
+
+    .g-icon span:nth-child(2) { color: #EA4335; }
+    .g-icon span:nth-child(3) { color: #FBBC05; }
+    .g-icon span:nth-child(4) { color: #4285F4; }
+    .g-icon span:nth-child(5) { color: #34A853; }
+    .g-icon span:nth-child(6) { color: #EA4335; }
+
+    .g-score {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 900;
+      font-size: 2.2rem;
+      color: var(--navy);
+      line-height: 1;
+    }
+
+    .g-stars { font-size: 0.9rem; letter-spacing: 2px; margin-bottom: 0.15rem; }
+
+    .g-count {
+      font-size: 0.7rem;
+      color: var(--mid-grey);
+    }
+
+    .leave-review-link {
+      display: inline-block;
+      background: var(--red);
+      color: var(--white);
+      padding: 0.9rem 2rem;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.2s;
+    }
+
+    .leave-review-link:hover {
+      background: var(--red-dark);
+      transform: translateY(-2px);
+    }
+
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    .review-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      padding: 1.75rem;
+      position: relative;
+      transition: box-shadow 0.3s, transform 0.3s;
+    }
+
+    .review-card:hover {
+      box-shadow: 0 6px 24px rgba(0,0,0,0.09);
+      transform: translateY(-3px);
+    }
+
+    .review-quote {
+      font-size: 2.5rem;
+      color: var(--red);
+      line-height: 1;
+      font-family: Georgia, serif;
+      margin-bottom: 0.5rem;
+    }
+
+    .review-text {
+      font-size: 0.87rem;
+      color: var(--dark-grey);
+      line-height: 1.75;
+      margin-bottom: 1.5rem;
+      font-style: italic;
+    }
+
+    .review-footer {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .review-avatar {
+      width: 38px;
+      height: 38px;
+      background: var(--red);
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 800;
+      font-size: 0.9rem;
+      flex-shrink: 0;
+    }
+
+    .review-name {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--navy);
+    }
+
+    .review-stars { font-size: 0.75rem; letter-spacing: 1px; }
+
+    /* ── GALLERY ── */
+    #gallery { padding: 0; }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      height: 400px;
+    }
+
+    .gallery-cell {
+      position: relative;
+      overflow: hidden;
+      background: var(--navy-light);
+    }
+
+    .gallery-cell img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s;
+      display: block;
+    }
+
+    .gallery-cell:hover img { transform: scale(1.06); }
+
+    .gallery-cell-placeholder {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 0.5rem;
+      color: rgba(255,255,255,0.3);
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .gallery-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(26,35,50,0.65) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    .gallery-caption {
+      position: absolute;
+      bottom: 1.25rem;
+      left: 1.25rem;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.9);
+    }
+
+    /* ── CONTACT ── */
+    #contact { background: var(--white); }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.5fr;
+      gap: 5rem;
+      align-items: start;
+    }
+
+    .contact-info { }
+
+    .contact-desc {
+      font-size: 0.9rem;
+      color: var(--mid-grey);
+      line-height: 1.8;
+      margin: 1.5rem 0 2rem;
+    }
+
+    .contact-items { display: flex; flex-direction: column; gap: 1.25rem; }
+
+    .contact-item {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+    }
+
+    .contact-icon {
+      width: 42px;
+      height: 42px;
+      background: var(--red);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      flex-shrink: 0;
+      color: #fff;
+    }
+
+    .contact-item-body strong {
+      display: block;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.68rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--red);
+      margin-bottom: 0.2rem;
+    }
+
+    .contact-item-body span {
+      font-size: 0.88rem;
+      color: var(--dark-grey);
+    }
+
+    .contact-item-body a {
+      font-size: 0.88rem;
+      color: var(--dark-grey);
+      text-decoration: none;
+    }
+
+    .contact-item-body a:hover { color: var(--red); }
+
+    /* FORM */
+    .contact-form-wrap {
+      background: var(--off-white);
+      border: 1px solid var(--border);
+      padding: 2.5rem;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .form-group { margin-bottom: 1.1rem; }
+
+    .form-group label {
+      display: block;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.65rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--navy);
+      margin-bottom: 0.45rem;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      background: var(--white);
+      border: 1px solid var(--border);
+      color: var(--dark-grey);
+      padding: 0.75rem 1rem;
+      font-family: 'Open Sans', sans-serif;
+      font-size: 0.88rem;
+      outline: none;
+      transition: border-color 0.2s;
+      appearance: none;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--red);
+    }
+
+    .form-group select { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23666' stroke-width='1.5' fill='none'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 1rem center; padding-right: 2.5rem; }
+
+    .form-group textarea { resize: vertical; min-height: 100px; }
+
+    .form-submit {
+      width: 100%;
+      background: var(--red);
+      color: var(--white);
+      border: none;
+      padding: 1rem 2rem;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 0.78rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: background 0.2s;
+      margin-top: 0.5rem;
+    }
+
+    .form-submit:hover { background: var(--red-dark); }
+    .form-submit:disabled { opacity: 0.6; cursor: not-allowed; }
+
+    .form-success-msg {
+      display: none;
+      background: #eefbf0;
+      border: 1px solid #27ae60;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .form-success-msg p {
+      color: #1a7a40;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+    }
+
+    .form-success-msg span {
+      font-size: 0.82rem;
+      color: #2d8a50;
+      margin-top: 0.5rem;
+      display: block;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--navy);
+      color: rgba(255,255,255,0.7);
+    }
+
+    .footer-main {
+      padding: 3.5rem 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr;
+      gap: 3rem;
+    }
+
+    .footer-brand-name {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 900;
+      font-size: 1.1rem;
+      color: var(--white);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-bottom: 0.25rem;
+    }
+
+    .footer-brand-name span { color: var(--red-light); }
+
+    .footer-brand-tag {
+      font-size: 0.65rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.35);
+      margin-bottom: 1.25rem;
+    }
+
+    .footer-desc {
+      font-size: 0.82rem;
+      line-height: 1.75;
+      color: rgba(255,255,255,0.55);
+    }
+
+    .footer-col-title {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 0.68rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--white);
+      margin-bottom: 1.25rem;
+    }
+
+    .footer-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+
+    .footer-links a {
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.55);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover { color: var(--red-light); }
+
+    .footer-contact-item {
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.55);
+      margin-bottom: 0.6rem;
+    }
+
+    .footer-contact-item a {
+      color: rgba(255,255,255,0.55);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-contact-item a:hover { color: var(--red-light); }
+
+    .footer-bottom {
+      background: rgba(0,0,0,0.25);
+      padding: 1.2rem 2rem;
+    }
+
+    .footer-bottom-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-copy {
+      font-size: 0.72rem;
+      color: rgba(255,255,255,0.35);
+    }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(28px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeLeft {
+      from { opacity: 0; transform: translateX(28px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.65s ease, transform 0.65s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: none;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 960px) {
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      .services-top { grid-template-columns: 1fr; gap: 1.5rem; }
+      .services-grid { grid-template-columns: 1fr 1fr; }
+      .about-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .reviews-grid { grid-template-columns: 1fr; }
+      .gallery-grid { grid-template-columns: 1fr; height: auto; }
+      .gallery-cell { height: 220px; }
+      .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .form-row { grid-template-columns: 1fr; }
+      .trust-inner { grid-template-columns: 1fr 1fr; }
+      .footer-main { grid-template-columns: 1fr; gap: 2rem; }
+      .hero-stats { display: none; }
+    }
+
+    @media (max-width: 600px) {
+      .services-grid { grid-template-columns: 1fr; }
+      .trust-inner { grid-template-columns: 1fr; }
+      .trust-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.15); }
+      .trust-item:last-child { border-bottom: none; }
+      .nav-top { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobileMenu">
+    <button class="mobile-close" id="mobileClose">✕</button>
+    <a href="#services" onclick="closeMobile()">Services</a>
+    <a href="#about" onclick="closeMobile()">About</a>
+    <a href="#reviews" onclick="closeMobile()">Reviews</a>
+    <a href="#contact" onclick="closeMobile()">Contact</a>
+    <a href="review.html" class="mobile-cta">Leave a Review</a>
+  </div>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-top">
+      <a href="tel:034554100">📞 03 455 4100</a>
+      <a href="mailto:info@barrydellplumbing.co.nz">✉ info@barrydellplumbing.co.nz</a>
+      <a href="#">📍 104 South Road, South Dunedin</a>
+    </div>
+    <div class="nav-main">
+      <a href="#home" class="nav-brand">
+        <div class="nav-brand-name">Barry <span>Dell</span> Plumbing</div>
+        <div class="nav-brand-sub">Dunedin Owned &amp; Operated · Since 2001</div>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#reviews">Reviews</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="review.html" class="nav-cta-btn">Leave a Review</a></li>
+      </ul>
+      <div class="hamburger" id="hamburger">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero-bg-img"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <div class="hero-label">
+        <div class="hero-label-pill">Dunedin's Trusted Experts</div>
+        <div class="hero-label-text">Over 50 Years Experience</div>
+      </div>
+      <h1>Plumbing,<br/>Drainage,<br/><span>Roofing &amp; Heating</span></h1>
+      <div class="hero-divider"></div>
+      <p class="hero-desc">We are Dunedin owned &amp; operated experts in plumbing, drainage, roofing &amp; heating. No job is too big or too small — with 25 qualified staff and a full fleet of specialist equipment, we deliver time and time again.</p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn-red">Get a Free Quote</a>
+        <a href="#services" class="btn-ghost">View All Services</a>
+      </div>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <span class="hero-stat-num">50+</span>
+        <span class="hero-stat-label">Years Experience</span>
+      </div>
+      <div class="hero-stat">
+        <span class="hero-stat-num">25</span>
+        <span class="hero-stat-label">Qualified Staff</span>
+      </div>
+      <div class="hero-stat">
+        <span class="hero-stat-num">24/7</span>
+        <span class="hero-stat-label">Emergency Cover</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUST STRIP -->
+  <div class="trust-strip">
+    <div class="trust-inner">
+      <div class="trust-item">
+        <div class="trust-item-icon">🛡</div>
+        <div class="trust-item-text">
+          <strong>Licensed &amp; Certified</strong>
+          <span>Master Plumbers registered</span>
+        </div>
+      </div>
+      <div class="trust-item">
+        <div class="trust-item-icon">⚡</div>
+        <div class="trust-item-text">
+          <strong>24/7 Emergency</strong>
+          <span>Available weekends &amp; after hours</span>
+        </div>
+      </div>
+      <div class="trust-item">
+        <div class="trust-item-icon">🏠</div>
+        <div class="trust-item-text">
+          <strong>Residential &amp; Commercial</strong>
+          <span>All property types covered</span>
+        </div>
+      </div>
+      <div class="trust-item">
+        <div class="trust-item-icon">📍</div>
+        <div class="trust-item-text">
+          <strong>Dunedin Owned</strong>
+          <span>104 South Road, South Dunedin</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SERVICES -->
+  <section id="services">
+    <div class="section-inner">
+      <div class="services-top reveal">
+        <div>
+          <div class="section-header">
+            <div class="section-eyebrow"><div class="eyebrow-bar"></div><div class="eyebrow-text">What We Do</div></div>
+            <h2>Full-Range <span>Trade</span> Services</h2>
+          </div>
+        </div>
+        <p class="services-intro">Barry Dell Plumbing has expertise in all aspects of plumbing, drainage and heating. All services are performed by first-class, fully trained and certified experts. All clients, regardless of the size or service performed, can be assured they will receive a friendly, reliable and cost-effective solution.</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card reveal">
+          <img class="service-img" src="https://barrydellplumbing.co.nz/assets/Uploads/plumbing.jpg" alt="Plumbing" onerror="this.style.display='none'" />
+          <div class="service-name">🔧 Plumbing</div>
+          <p class="service-desc">Emergency repairs, kitchen &amp; bathroom upgrades, new homes, commercial buildings, water filters, marine servicing, water mains and spouting. Domestic &amp; commercial.</p>
+        </div>
+        <div class="service-card reveal">
+          <img class="service-img" src="https://barrydellplumbing.co.nz/assets/Uploads/drainage1.jpg" alt="Drainage" onerror="this.style.display='none'" />
+          <div class="service-name">🚿 Drainage</div>
+          <p class="service-desc">Drain clearing, hydro jet cleaning, CCTV drain inspection, excavation, new drainage work, storm water sumps and vacuum/suction trucks. Domestic &amp; commercial.</p>
+        </div>
+        <div class="service-card reveal">
+          <img class="service-img" src="https://barrydellplumbing.co.nz/assets/Uploads/roofing1.jpg" alt="Roofing" onerror="this.style.display='none'" />
+          <div class="service-name">🏗 Roofing</div>
+          <p class="service-desc">New roofs, re-roofing, repairs, flashings, roof cleaning, spouting, gutters. Licensed installers of Viking Membrane Roofing — Enviroclad, Butylclad &amp; Dec-K-ing.</p>
+        </div>
+        <div class="service-card reveal">
+          <img class="service-img" src="https://barrydellplumbing.co.nz/assets/Uploads/guttercleaning.jpg" alt="Gutter Cleaning" onerror="this.style.display='none'" />
+          <div class="service-name">🪣 Gutter Cleaning</div>
+          <p class="service-desc">Domestic and commercial spouting and gutter cleaning by trained industrial abseiling specialists. Programmed and routine roof maintenance available.</p>
+        </div>
+        <div class="service-card reveal">
+          <img class="service-img" src="https://barrydellplumbing.co.nz/assets/Uploads/thermal.jpg" alt="Thermal Imaging" onerror="this.style.display='none'" />
+          <div class="service-name">🔍 Thermal Imaging</div>
+          <p class="service-desc">Locate moisture problems, identify hidden leaks and detect heat loss and poor insulation — before small issues become expensive ones.</p>
+        </div>
+        <div class="service-card reveal">
+          <img class="service-img" src="https://barrydellplumbing.co.nz/assets/Uploads/heating-ventilation.jpg" alt="Heating" onerror="this.style.display='none'" />
+          <div class="service-name">🔥 Heating &amp; Gasfitting</div>
+          <p class="service-desc">Radiators, ventilation, valving, pumps and routine maintenance. Gas fitting for heating, cooking, hot water — residential and commercial installation.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ACCREDITATIONS -->
+  <div class="accred-strip">
+    <div class="accred-inner">
+      <div class="accred-label">Proud Members &amp; Accreditations</div>
+      <div class="accred-logos">
+        <div class="accred-logo">Master Plumbers NZ</div>
+        <div class="accred-logo">Site Safe NZ</div>
+        <div class="accred-logo">ACC</div>
+        <div class="accred-logo">Roofing Assoc. NZ</div>
+        <div class="accred-logo">Viking Membrane</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="section-inner">
+      <div class="about-grid">
+        <div class="about-images reveal">
+          <img class="about-img-main" src="https://barrydellplumbing.co.nz/assets/Uploads/eec8c18ccd2956da764efd62d73d19ef.jpg" alt="Barry Dell Plumbing Team" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+          <div class="about-img-placeholder-main" style="display:none;">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#bbb" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21,15 16,10 5,21"/></svg>
+            <span>Team Photo</span>
+          </div>
+          <div class="about-badge">
+            <strong>50+</strong>
+            <span>Years</span>
+          </div>
+        </div>
+        <div class="about-content reveal">
+          <div class="section-header">
+            <div class="section-eyebrow"><div class="eyebrow-bar"></div><div class="eyebrow-text">Our Story</div></div>
+            <h2>The <span>Plumbers</span><br/>by the Brook</h2>
+          </div>
+          <p class="about-body">For more than 50 years, Barry Dell Plumbing has been a trusted name in and around the Otago area. Barry and Liz Carmichael took over ownership in August 2001 and have since grown the team from just 3 staff to 25 qualified tradespeople.</p>
+          <p class="about-body">Based at the old Glen Motor Court on the corner of Glen and South Roads, the team has been affectionately known as the "Plumbers by the Brook" — named after their proximity to Carisbrook, the old "House of Pain".</p>
+          <div class="about-pillars">
+            <div class="pillar">
+              <div class="pillar-text">
+                <strong>Keep Our Promises</strong>
+                <p>If we say we'll do something at a certain time — we do it. We wouldn't ask you to accept anything less.</p>
+              </div>
+            </div>
+            <div class="pillar">
+              <div class="pillar-text">
+                <strong>Keep People Informed</strong>
+                <p>From initial quote through to completion, communication is key to lasting relationships. We pride ourselves on keeping our customers in the loop.</p>
+              </div>
+            </div>
+            <div class="pillar">
+              <div class="pillar-text">
+                <strong>Keep Things Tidy</strong>
+                <p>We'll never leave your property before cleaning up. We keep disruptions to your access and services to a minimum.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY STRIP -->
+  <div id="gallery">
+    <div class="gallery-grid">
+      <div class="gallery-cell">
+        <img src="https://barrydellplumbing.co.nz/assets/Uploads/IMG-20180816-160046.jpg" alt="Plumbing work" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+        <div class="gallery-cell-placeholder" style="display:none;">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21,15 16,10 5,21"/></svg>
+          <span>Gallery</span>
+        </div>
+        <div class="gallery-overlay"></div>
+        <div class="gallery-caption">Residential Plumbing</div>
+      </div>
+      <div class="gallery-cell">
+        <img src="https://barrydellplumbing.co.nz/assets/Uploads/roofing1.jpg" alt="Roofing" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+        <div class="gallery-cell-placeholder" style="display:none;">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21,15 16,10 5,21"/></svg>
+          <span>Roofing</span>
+        </div>
+        <div class="gallery-overlay"></div>
+        <div class="gallery-caption">Commercial Roofing</div>
+      </div>
+      <div class="gallery-cell">
+        <img src="https://barrydellplumbing.co.nz/assets/Uploads/truck-excavator.jpg" alt="Equipment" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+        <div class="gallery-cell-placeholder" style="display:none;">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21,15 16,10 5,21"/></svg>
+          <span>Equipment</span>
+        </div>
+        <div class="gallery-overlay"></div>
+        <div class="gallery-caption">Our Fleet &amp; Equipment</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- REVIEWS -->
+  <section id="reviews">
+    <div class="section-inner">
+      <div class="reviews-header-row reveal">
+        <div>
+          <div class="section-eyebrow"><div class="eyebrow-bar"></div><div class="eyebrow-text">Google Reviews</div></div>
+          <h2>What Our <span>Customers</span> Say</h2>
+        </div>
+        <div style="display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap;">
+          <div class="google-rating">
+            <div class="g-icon">
+              <span>G</span><span>o</span><span>o</span><span>g</span><span>l</span><span>e</span>
+            </div>
+            <div>
+              <div class="g-score">4.2</div>
+              <div class="g-stars">⭐⭐⭐⭐⭐</div>
+              <div class="g-count">Google Reviews</div>
+            </div>
+          </div>
+          <a href="review.html" class="leave-review-link">Leave a Review</a>
+        </div>
+      </div>
+      <div class="reviews-grid">
+        <div class="review-card reveal">
+          <div class="review-quote">"</div>
+          <p class="review-text">We really appreciated the service we received from Barry Dell Plumbing. We needed sizable drain works done on our property. Alan took the time to thoroughly assess our needs and develop a plan. Barry Dell did a really good, thorough job and we're very pleased with the results.</p>
+          <div class="review-footer">
+            <div class="review-avatar">S</div>
+            <div>
+              <div class="review-name">Sarah W.</div>
+              <div class="review-stars">⭐⭐⭐⭐⭐</div>
+            </div>
+          </div>
+        </div>
+        <div class="review-card reveal">
+          <div class="review-quote">"</div>
+          <p class="review-text">Called about an emergency drain issue on a Saturday morning — they had someone out within two hours. Jason was excellent at keeping us informed throughout. Couldn't be more relieved. Highly recommend for any urgent plumbing work.</p>
+          <div class="review-footer">
+            <div class="review-avatar">J</div>
+            <div>
+              <div class="review-name">James T.</div>
+              <div class="review-stars">⭐⭐⭐⭐⭐</div>
+            </div>
+          </div>
+        </div>
+        <div class="review-card reveal">
+          <div class="review-quote">"</div>
+          <p class="review-text">They kept in contact with me regularly while we were waiting for the builder to be available. Professional team from start to finish — the job was done right the first time and they left the site clean and tidy. Would use again without hesitation.</p>
+          <div class="review-footer">
+            <div class="review-avatar">R</div>
+            <div>
+              <div class="review-name">Rachel B.</div>
+              <div class="review-stars">⭐⭐⭐⭐⭐</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="section-inner">
+      <div class="contact-grid">
+        <div class="contact-info reveal">
+          <div class="section-eyebrow"><div class="eyebrow-bar"></div><div class="eyebrow-text">Get in Touch</div></div>
+          <h2>Request a <span>Free</span> Quote</h2>
+          <p class="contact-desc">Tell us about your job and we'll get back to you promptly. Whether it's an urgent repair, a planned renovation or a new commercial build — we have the team and equipment to handle it.</p>
+          <div class="contact-items">
+            <div class="contact-item">
+              <div class="contact-icon">📞</div>
+              <div class="contact-item-body">
+                <strong>Phone</strong>
+                <a href="tel:034554100">03 455 4100</a>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon">✉</div>
+              <div class="contact-item-body">
+                <strong>Email</strong>
+                <a href="mailto:info@barrydellplumbing.co.nz">info@barrydellplumbing.co.nz</a>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon">📍</div>
+              <div class="contact-item-body">
+                <strong>Address</strong>
+                <span>104 South Road, South Dunedin 9011</span>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon">🕐</div>
+              <div class="contact-item-body">
+                <strong>Hours</strong>
+                <span>Mon–Fri 8am–5pm · Emergency 24/7</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="reveal">
+          <div class="contact-form-wrap" id="formWrap">
+            <form id="contactForm" action="https://api.staticforms.xyz/submit" method="post">
+              <input type="hidden" name="apiKey" value="sf_768da8d33927e7f4f241d0a6" />
+              <input type="hidden" name="subject" value="Website Enquiry – Barry Dell Plumbing" />
+              <div class="form-row">
+                <div class="form-group">
+                  <label>First Name *</label>
+                  <input type="text" name="firstName" required placeholder="John" />
+                </div>
+                <div class="form-group">
+                  <label>Last Name *</label>
+                  <input type="text" name="lastName" required placeholder="Smith" />
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label>Phone</label>
+                  <input type="tel" name="phone" placeholder="021 000 0000" />
+                </div>
+                <div class="form-group">
+                  <label>Email *</label>
+                  <input type="email" name="email" required placeholder="you@example.com" />
+                </div>
+              </div>
+              <div class="form-group">
+                <label>Suburb / Area</label>
+                <input type="text" name="suburb" placeholder="e.g. South Dunedin, Mosgiel, Balclutha" />
+              </div>
+              <div class="form-group">
+                <label>Service Required *</label>
+                <select name="service" required>
+                  <option value="" disabled selected>Select a service</option>
+                  <option value="Plumbing">Plumbing</option>
+                  <option value="Drainage">Drainage</option>
+                  <option value="Roofing">Roofing</option>
+                  <option value="Gutter Cleaning">Gutter Cleaning</option>
+                  <option value="Thermal Imaging">Thermal Imaging</option>
+                  <option value="Heating & Ventilation">Heating &amp; Ventilation</option>
+                  <option value="Gas Fitting">Gas Fitting</option>
+                  <option value="IQP Back Flow Testing">IQP Back Flow Testing</option>
+                  <option value="Emergency">Emergency Call-out</option>
+                  <option value="Other">Other</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label>Job Type</label>
+                <select name="jobType">
+                  <option value="" disabled selected>Residential or Commercial?</option>
+                  <option value="Residential">Residential</option>
+                  <option value="Commercial">Commercial</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label>Tell Us About Your Job *</label>
+                <textarea name="message" required placeholder="Briefly describe the issue or project — the more detail, the better…"></textarea>
+              </div>
+              <button type="submit" class="form-submit" id="submitBtn">Send Enquiry →</button>
+            </form>
+          </div>
+          <div class="form-success-msg" id="successMsg">
+            <p>✅ Thanks — your enquiry has been sent!</p>
+            <span>Our team will be in touch within 1 business day. For urgent jobs please call 03 455 4100.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-main">
+      <div>
+        <div class="footer-brand-name">Barry <span>Dell</span> Plumbing</div>
+        <div class="footer-brand-tag">Dunedin Owned &amp; Operated Since 2001</div>
+        <p class="footer-desc">Dunedin's trusted experts in plumbing, drainage, roofing &amp; heating. Over 50 years of experience serving residential and commercial clients across Otago.</p>
+      </div>
+      <div>
+        <div class="footer-col-title">Quick Links</div>
+        <ul class="footer-links">
+          <li><a href="#services">Services</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#reviews">Reviews</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="review.html">Leave a Review</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Contact Us</div>
+        <div class="footer-contact-item"><a href="tel:034554100">📞 03 455 4100</a></div>
+        <div class="footer-contact-item"><a href="mailto:info@barrydellplumbing.co.nz">✉ info@barrydellplumbing.co.nz</a></div>
+        <div class="footer-contact-item">📍 104 South Road<br/>South Dunedin 9011</div>
+        <div class="footer-contact-item">🕐 Mon–Fri: 8am–5pm<br/>Emergency: 24/7</div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-bottom-inner">
+        <div class="footer-copy">&copy; 2026 Barry Dell Plumbing (2001) Ltd. All rights reserved.</div>
+        <div class="footer-copy">
+          <a href="https://barrydellplumbing.co.nz/privacy-policy" style="color:rgba(255,255,255,0.35);text-decoration:none;margin-right:1rem;">Privacy Policy</a>
+          <a href="https://barrydellplumbing.co.nz/terms-and-conditions" style="color:rgba(255,255,255,0.35);text-decoration:none;">Terms &amp; Conditions</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile nav
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const mobileClose = document.getElementById('mobileClose');
+    hamburger.addEventListener('click', () => mobileMenu.classList.add('open'));
+    mobileClose.addEventListener('click', () => mobileMenu.classList.remove('open'));
+    function closeMobile() { mobileMenu.classList.remove('open'); }
+
+    // Scroll reveal
+    const revealEls = document.querySelectorAll('.reveal');
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.1 });
+    revealEls.forEach(el => obs.observe(el));
+
+    // Contact form AJAX
+    const contactForm = document.getElementById('contactForm');
+    const submitBtn = document.getElementById('submitBtn');
+    const formWrap = document.getElementById('formWrap');
+    const successMsg = document.getElementById('successMsg');
+
+    contactForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      submitBtn.textContent = 'Sending…';
+      submitBtn.disabled = true;
+      const data = {};
+      new FormData(contactForm).forEach((v, k) => data[k] = v);
+      try {
+        await fetch('https://api.staticforms.xyz/submit', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(data)
+        });
+        formWrap.style.display = 'none';
+        successMsg.style.display = 'block';
+      } catch {
+        submitBtn.textContent = 'Send Enquiry →';
+        submitBtn.disabled = false;
+        alert('Something went wrong. Please call us directly on 03 455 4100.');
+      }
+    });
+  </script>
+</body>
+</html>
